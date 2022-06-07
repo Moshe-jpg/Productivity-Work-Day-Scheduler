@@ -4,6 +4,10 @@ body {
   line-height: 1;
 }
 
+#currentDay {
+  height: 30px;
+}
+
 textarea{
   background: transparent;
   border: none;
