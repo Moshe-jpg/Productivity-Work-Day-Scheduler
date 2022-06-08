@@ -27,6 +27,7 @@ h1 {
   color: var(--third-color);
 }
 
+
 textarea{
   background: transparent;
   border: none;
@@ -34,6 +35,8 @@ textarea{
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  text-align: center;
+  margin: auto 0;
 }
 
 .jumbotron {

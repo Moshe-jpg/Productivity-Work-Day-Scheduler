@@ -37,7 +37,7 @@ $(".submit-btn").on("click", function (){
     localStorage.setItem(time, value);
 })
 
-
+// get the values of all the items from localStorage
 $("#9").next().val(localStorage.getItem("9"));
 $("#10").next().val(localStorage.getItem("10"));
 $("#11").next().val(localStorage.getItem("11"));
