@@ -19,14 +19,13 @@ body {
   color: var(--primary-color);
 }
 
-h1 {
+h1, .lead {
   color: var(--primary-color);
 }
 
-.lead {
-  color: var(--third-color);
+#text-muted {
+  opacity: 75%;
 }
-
 
 textarea{
   background: transparent;
