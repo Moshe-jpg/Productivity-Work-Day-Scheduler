@@ -1,3 +1,7 @@
+:root {
+  --primary-color: #ffffff;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -5,8 +9,9 @@ body {
 }
 
 #currentDay {
-  height: 30px;
+  font-size: 5vh;
 }
+
 
 textarea{
   background: transparent;
