@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+}
+
 :root {
   --primary-color: #ffffff;
+  --secondary-color: #47B5FF;
+  --third-color: #000000;
 }
 
 body {
@@ -10,8 +16,16 @@ body {
 
 #currentDay {
   font-size: 5vh;
+  color: var(--primary-color);
 }
 
+h1 {
+  color: var(--primary-color);
+}
+
+.lead {
+  color: var(--third-color);
+}
 
 textarea{
   background: transparent;
@@ -28,6 +42,7 @@ textarea{
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  background: linear-gradient(#0C94F8, #0B4BD9, #380BD9, #810CF8);
 }
 
 .description{
