@@ -1,27 +1,27 @@
-var rowTime = [
-    {1: document.getElementById("row1").innerHTML},
-    {2: document.getElementById("row2").innerHTML},
-    {3: document.getElementById("row3").innerHTML},
-    {4: document.getElementById("row4").innerHTML},
-    {5: document.getElementById("row5").innerHTML},
-    {6: document.getElementById("row6").innerHTML},
-    {7: document.getElementById("row7").innerHTML},
-    {8: document.getElementById("row8").innerHTML},
-    {9: document.getElementById("row9").innerHTML}
-];
-
-var row1Val = document.getElementById("row1Holder").value;
-var row2Val = document.getElementById("row2Holder").value;
-var row3Val = document.getElementById("row3Holder").value;
-var row4Val = document.getElementById("row4Holder").value;
-var row5Val = document.getElementById("row5Holder").value;
-var row6Val = document.getElementById("row6Holder").value;
-var row7Val = document.getElementById("row7Holder").value;
-var row8Val = document.getElementById("row8Holder").value;
-var row9Val = document.getElementById("row9Holder").value;
-
 var rightNow = moment().format("hh:mm");
-console.log(rightNow);
+
+// Remove old classes
+
+function updateHour(){
+    var currentHour = moment().hours();
+    $(".time-block").each(function (){
+        var blockHour = parseInt($(this).attr("id"));
+        if (blockHour < currentHour){
+            $(this).parent().addClass("bg-danger");
+        }
+
+            else if (blockHour === currentHour){
+                // $(this).parent().removeClass("bg-danger");
+                $(this).parent().addClass("bg-warning");
+            }
+                else {
+                    // $(this).parent().removeClass("bg-danger");
+                    // $(this).parent().removeClass("bg-warning");
+                    $(this).parent().addClass("bg-success");
+                }
+    })
+}
+
 
 // connect to current date with moment.js and have it reload the current date every hour
 function getDate(){
@@ -31,12 +31,27 @@ function getDate(){
 }
 
 // save the tasks to localStorage
-// function saveTasks(){
-//     localStorage.setItem()
-// }
+$(".submit-btn").on("click", function (){
+    var time = $(this).parent().prev().prev().attr("id");
+    var value = $(this).parent().prev(".task").val();
+    localStorage.setItem(time, value);
+})
+
+
+$("#9").next().val(localStorage.getItem("9"));
+$("#10").next().val(localStorage.getItem("10"));
+$("#11").next().val(localStorage.getItem("11"));
+$("#12").next().val(localStorage.getItem("12"));
+$("#13").next().val(localStorage.getItem("13"));
+$("#14").next().val(localStorage.getItem("14"));
+$("#15").next().val(localStorage.getItem("15"));
+$("#16").next().val(localStorage.getItem("16"));
+$("#17").next().val(localStorage.getItem("17"));
 
 
 
 // get the date as soon as the page loads
 getDate();
-
+// update the colored blocks every 30 seconds
+setInterval(updateHour, 30000);
+updateHour();
