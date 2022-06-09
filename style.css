@@ -49,13 +49,12 @@ textarea{
   background: linear-gradient(#0C94F8, #0B4BD9, #380BD9, #810CF8);
 }
 
-.description{
+.task{
   white-space: pre-wrap;
 }
 
 .time-block{
   text-align: center;
-  border-radius: 15px;
 }
 
 .row {

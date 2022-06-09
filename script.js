@@ -1,6 +1,6 @@
 var rightNow = moment().format("hh:mm");
 
-// Remove old classes
+// update the time block colours based on the time
 
 function updateHour(){
     var currentHour = moment().hours();
@@ -46,9 +46,19 @@ $("#16").next().val(localStorage.getItem("16"));
 $("#17").next().val(localStorage.getItem("17"));
 
 
+// remove the h1 and paragraph after 3.5 seconds in order to take advantage of screen space
+$( document ).ready(function() {
+    setTimeout(function(){
+        $(".header-h1").remove();
+        $(".header-p").remove();
+    }, 3500)
+});
 
 // get the date as soon as the page loads
 getDate();
+
 // update the colored blocks every 30 seconds
 setInterval(updateHour, 30000);
+
+// run the time block colour function
 updateHour();
