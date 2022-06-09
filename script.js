@@ -11,12 +11,9 @@ function updateHour(){
         }
 
             else if (blockHour === currentHour){
-                // $(this).parent().removeClass("bg-danger");
                 $(this).parent().addClass("bg-warning");
             }
                 else {
-                    // $(this).parent().removeClass("bg-danger");
-                    // $(this).parent().removeClass("bg-warning");
                     $(this).parent().addClass("bg-success");
                 }
     })
